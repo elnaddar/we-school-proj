@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Post;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
@@ -17,7 +18,11 @@ class Posts extends Component
     public function create()
     {
         $this->validate();
-        dd([$this->title, $this->content, $this->image]);
+        Post::create([
+            "title" => $this->title,
+            "content" => $this->content
+        ]);
+        $this->reset();
     }
 
     public function render()
