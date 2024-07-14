@@ -27,6 +27,7 @@ class Posts extends Component
 
     public function render()
     {
-        return view('livewire.posts');
+        $posts = count(Post::all() ?? []);
+        return view('livewire.posts', ["posts" => $posts]);
     }
 }

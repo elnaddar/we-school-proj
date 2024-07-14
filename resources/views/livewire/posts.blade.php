@@ -21,4 +21,7 @@
         </p>
         <input type="submit" value="Create Post">
     </form>
+    <div>
+        {{$posts}}
+    </div>
 </div>
