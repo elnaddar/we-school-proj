@@ -24,7 +24,7 @@ class Posts extends Component
         Post::create([
             "title" => $this->title,
             "content" => $this->content,
-            "image" => $this->image->store("uploads/posts", "public"),
+            "image" => $this->image?->store("uploads/posts", "public"),
         ]);
         $this->reset();
     }
