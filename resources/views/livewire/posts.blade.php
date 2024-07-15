@@ -11,6 +11,11 @@
         <p>
             <label for="image">Image: </label>
             <input wire:model='image' id="image" type="file" accept="image/png image/jpeg">
+            @if ($image)
+                <div>
+                    <img height="100px" src="{{ $image->temporaryUrl() }}">
+                </div>
+            @endif
         </p>
         <p>
             <label for="content">Content: </label>
@@ -22,6 +27,6 @@
         <input type="submit" value="Create Post">
     </form>
     <div>
-        {{$posts}}
+        {{ $posts }}
     </div>
 </div>
