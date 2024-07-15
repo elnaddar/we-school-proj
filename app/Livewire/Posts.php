@@ -27,6 +27,7 @@ class Posts extends Component
             "image" => $this->image?->store("uploads/posts", "public"),
         ]);
         $this->reset();
+        $this->dispatch("post-created");
     }
 
     public function render()
