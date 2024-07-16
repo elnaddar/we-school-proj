@@ -1,4 +1,4 @@
-<div class="items-start lg:flex">
+<div class="items-start xl:columns-4 lg:columns-3 md:columns-2">
     {{-- Nothing in the world is as soft and yielding as water. --}}
     @foreach ($posts as $post)
         <div class="max-w-sm mb-2 overflow-hidden bg-white rounded shadow-lg lg:mr-2">
