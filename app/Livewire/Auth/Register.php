@@ -25,6 +25,7 @@ class Register extends Component
             "password"=> $this->password,
         ]);
         Auth::login($user);
+        redirect()->route("home");
     }
     public function render()
     {
