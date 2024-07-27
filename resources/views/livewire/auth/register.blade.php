@@ -21,21 +21,21 @@
             </div>
             <div class="mb-4">
                 <label class="block mb-2 text-sm font-bold text-gray-700" for="email">Email: </label>
-                <input class="{{ inputStyle($errors->has('email')) }}" wire:model='email' id="email" type="text">
+                <input class="{{ inputStyle($errors->has('email')) }}" wire:model='email' id="email" type="email">
                 @error('email')
                     <div class="text-xs italic text-red-500">{{ $message }}</div>
                 @enderror
             </div>
             <div class="mb-4">
                 <label class="block mb-2 text-sm font-bold text-gray-700" for="password">Password: </label>
-                <input class="{{ inputStyle($errors->has('password')) }}" wire:model='password' id="password" type="text">
+                <input class="{{ inputStyle($errors->has('password')) }}" wire:model='password' id="password" type="password">
                 @error('password')
                     <div class="text-xs italic text-red-500">{{ $message }}</div>
                 @enderror
             </div>
             <div class="mb-4">
                 <label class="block mb-2 text-sm font-bold text-gray-700" for="password_confirmation">Confirm Password: </label>
-                <input class="{{ inputStyle($errors->has('password_confirmation')) }}" wire:model='password_confirmation' id="password_confirmation" type="text">
+                <input class="{{ inputStyle($errors->has('password_confirmation')) }}" wire:model='password_confirmation' id="password_confirmation" type="password">
                 @error('password_confirmation')
                     <div class="text-xs italic text-red-500">{{ $message }}</div>
                 @enderror
