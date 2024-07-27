@@ -3,6 +3,7 @@
 namespace App\Livewire\Auth;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
@@ -18,11 +19,12 @@ class Register extends Component
 
     public function register(){
         $this->validate();
-        User::create([
+        $user = User::create([
             "name"=> $this->name,
             "email"=> $this->email,
             "password"=> $this->password,
         ]);
+        Auth::login($user);
     }
     public function render()
     {
