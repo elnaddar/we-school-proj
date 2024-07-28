@@ -7,7 +7,7 @@ use App\Livewire\PostsPage;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware("auth")->group(function () {
-    Route::get('/counter', Counter::class)->name('counter');
+    Route::middleware("role:admin")->get('/counter', Counter::class)->name('counter');
     Route::get('/', PostsPage::class)->name('home');
     Route::get('/logout', function () {
         auth()->logout();

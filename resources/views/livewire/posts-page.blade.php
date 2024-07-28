@@ -1,6 +1,10 @@
 <div>
     {{-- Knowing others is intelligence; knowing yourself is true wisdom. --}}
-    @livewire('posts')
-    @livewire('live-search')
-    <livewire:posts-view>
+    @role('admin')
+        @livewire('posts')
+    @endrole
+    @haspermission('read post')
+        @livewire('live-search')
+        <livewire:posts-view />
+    @endhaspermission
 </div>
