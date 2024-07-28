@@ -24,6 +24,7 @@ class Register extends Component
             "email"=> $this->email,
             "password"=> $this->password,
         ]);
+        $user->assignRole("reader");
         Auth::login($user);
         redirect()->route("home");
     }
