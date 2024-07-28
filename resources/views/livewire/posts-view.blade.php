@@ -12,12 +12,8 @@
                 </p>
             </div>
             <div class="px-6 pt-4 pb-2">
-                <span
-                    class="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full">#photography</span>
-                <span
-                    class="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full">#travel</span>
-                <span
-                    class="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full">#winter</span>
+                <a href="{{route("post.edit", $post)}}"
+                    class="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full">#EDIT</a>
             </div>
         </div>
     @endforeach
