@@ -10,6 +10,9 @@
 </head>
 
 <body class="bg-gray-200 ">
+    @auth
+        <a href="{{ route('logout') }}">Logout</a>
+    @endauth
     {{ $slot }}
 </body>
 
