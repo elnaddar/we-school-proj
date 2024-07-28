@@ -14,8 +14,7 @@
         <form class="px-8 pt-6 pb-8 mb-4 bg-white rounded shadow-md" wire:submit='update'>
             <div class="mb-4">
                 <label class="block mb-2 text-sm font-bold text-gray-700" for="title">Title: </label>
-                <input class="{{ inputStyle($errors->has('title')) }}" wire:model='title' id="title"
-                    type="text">
+                <input class="{{ inputStyle($errors->has('title')) }}" wire:model='title' id="title" type="text">
                 @error('title')
                     <div class="text-xs italic text-red-500">{{ $message }}</div>
                 @enderror
@@ -29,12 +28,18 @@
             </div>
             <div class="mb-6">
                 <label class="block mb-2 text-sm font-bold text-gray-700" for="image">Image: </label>
-                <input class="{{ inputStyle($errors->has('image')) }}" wire:model='image' id="image"
-                    type="file" accept="image/png image/jpeg">
+                <input class="{{ inputStyle($errors->has('image')) }}" wire:model='image' id="image" type="file"
+                    accept="image/png image/jpeg">
                 @if ($image)
-                    <div>
-                        <img class="w-20 h-20 mr-1 rounded" src="{{ $image->temporaryUrl() }}">
-                    </div>
+                    @if ($image == $post->image)
+                        <div>
+                            <img class="w-20 h-20 mr-1 rounded" src="{{ asset('storage/' . $post->image) }}">
+                        </div>
+                    @else
+                        <div>
+                            <img class="w-20 h-20 mr-1 rounded" src="{{ $image->temporaryUrl() }}">
+                        </div>
+                    @endif
                 @endif
                 @error('image')
                     <div class="text-xs italic text-red-500">{{ $message }}</div>
